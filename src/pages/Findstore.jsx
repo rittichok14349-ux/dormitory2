@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import dorms from "../services/dormn"; // 👉 ใช้ข้อมูลใหม่ที่แยกเป็น object
+import dormi from "../services/dormi"; // 👉 ใช้ข้อมูลใหม่ที่แยกเป็น object
+import { useNavigate } from "react-router-dom";
+
 
 export default function Findstore() {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("ที่พักรายวัน");
 
-  const filters = ["ที่พักรายวัน", "ที่พัก 3 เดือน", "ที่พัก 6 เดือน", "ที่พักรายปี"];
+  const filters = ["ที่พักรายวัน","ที่พักรายปี"];
 
   return (
     <div className="container mx-auto py-10">
@@ -35,7 +38,7 @@ export default function Findstore() {
 
       {/* 🔹 การ์ดหอพัก */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {dorms[filter]?.map((dorm) => (
+        {dormi[filter]?.map((dorm) => (
           <div
             key={dorm.id}
             className="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition"
@@ -63,6 +66,12 @@ export default function Findstore() {
                 <span>📅</span>
                 <span>เลื่อนประกาศ : {dorm.updatedAt}</span>
               </div>
+              <button
+                onClick={() => navigate("/roompi", { state: { dorm } })}
+                className="mt-2 bg-gradient-to-r from-cyan-500 to-green-400 text-white px-6 py-2 rounded-md hover:opacity-90"
+              >
+                ดูรายละเอียด
+              </button>
             </div>
           </div>
         ))}

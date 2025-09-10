@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Findstore from "./pages/Findstore";
 import SearchRestaurants from "./pages/SearchRestaurants";
 import Footer from "./components/Footer";
-import RestaurantDetail from "./pages/RestaurantDetail";
+import Roompi from "./pages/Roompi";
 import CardDetail from "./pages/CardDetail";
 import RoomDetail from "./pages/RoomDetail";
 import ContactPage from "./pages/ContactPage"; // นำเข้าคอมโพเนนต์ ContactPage
@@ -70,7 +70,7 @@ const App = () => {
         <Route path="/Findstore" element={<Findstore />} />
         <Route path="/contact" element={<ContactPage />} /> {/* เพิ่มตรงนี้ */}
         <Route path="/restaurant/:id" element={<CardDetail />} />
-        <Route path="/restaurant/:id" element={<RestaurantDetail />} />
+        <Route path="/roompi" element={<Roompi />} />
         <Route path="/roomDetail" element={<RoomDetail />} />
         <Route path="/finddorms" element={<FindDorms />} />
         <Route path="/room" element={<Room />} />

@@ -1,5 +1,5 @@
 // 👉 services/dorms.js
-const dorms = {
+const dormi = {
   "ที่พักรายวัน": [
     {
       id: 1,
@@ -157,4 +157,4 @@ const dorms = {
   ],
 };
 
-export default dorms;
+export default dormi;
